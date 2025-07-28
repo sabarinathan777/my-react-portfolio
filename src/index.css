@@ -10,20 +10,4 @@
   .glass-card {
     @apply w-full max-w-xl bg-slate-900/50 backdrop-blur-md p-8 rounded-xl shadow-lg;
   }
-
-  /* .text-link {
-    @apply text-link hover:text-link-hover underline;
-  }
-
-  .nav-link {
-    @apply block text-link hover:text-link-hover transition;
-  }
-
-  .nav-link-active {
-    @apply text-white font-semibold hover:text-link-hover transition;
-  }
-
-  .navbar-bg {
-    @apply bg-gradient-to-br from-navbar via-black to-gray-900 shadow-md;
-  } */
 }

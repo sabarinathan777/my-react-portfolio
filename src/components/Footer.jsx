@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ArrowUp } from "lucide-react";

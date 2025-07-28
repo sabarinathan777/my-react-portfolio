@@ -6,7 +6,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const projectData = [
+const professionalProjects = [
   {
     title: "Inspection Portal",
     date: "Jan 2025 - Apr 2025",
@@ -27,53 +27,131 @@ const projectData = [
   },
 ];
 
+const personalProjects = [
+  {
+    title: "YouTube Clone (React)",
+    date: "Jul 2025",
+    icon: <FaLaptopCode />,
+    description:
+      "Built a responsive YouTube UI clone as my first React project using Vite. This project demonstrates my ability to quickly adapt to new technologies beyond Vue. Includes mobile-first design, reusable components, and clean deployment with GitHub and Vercel.",
+    tech: "React, Vite, CSS, GitHub, Vercel",
+    role: "Personal Project",
+    links: {
+      live: "https://youtube-clone-neon-theta.vercel.app",
+      code: "https://github.com/sabarinathan777/youtube-clone",
+    },
+  },
+];
+
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="bg-background text-text-base py-16 px-4"
-    >
+    <section id="projects" className="bg-background text-text-base py-16 px-4">
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary">
           Projects Timeline
         </h2>
         <p className="text-text-muted mt-2 text-sm sm:text-base">
-          A snapshot of real-world apps I’ve contributed to
+          A snapshot of real-world and personal apps I’ve worked on
         </p>
       </div>
 
-      <VerticalTimeline lineColor="#6366f1">
-        {projectData.map((project, index) => (
-          <VerticalTimelineElement
-            key={index}
-            date={project.date}
-            iconStyle={{ background: "#6366f1", color: "#fff" }}
-            icon={project.icon}
-            contentStyle={{
-              background: "#1e293b",
-              color: "#e2e8f0",
-              boxShadow: "0 0 0 1px #334155",
-            }}
-            contentArrowStyle={{ borderRight: "7px solid #1e293b" }}
-          >
-            <motion.h3
-              className="text-xl font-semibold text-primary"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+      {/* Professional Projects */}
+      <div className="max-w-5xl mx-auto mb-12">
+        <h3 className="text-2xl font-semibold text-left text-primary mb-6">
+          Professional Projects
+        </h3>
+        <VerticalTimeline lineColor="#6366f1">
+          {professionalProjects.map((project, index) => (
+            <VerticalTimelineElement
+              key={index}
+              date={project.date}
+              iconStyle={{ background: "#6366f1", color: "#fff" }}
+              icon={project.icon}
+              contentStyle={{
+                background: "#1e293b",
+                color: "#e2e8f0",
+                boxShadow: "0 0 0 1px #334155",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #1e293b" }}
             >
-              {project.title}
-            </motion.h3>
-            <p className="text-sm text-text-muted mt-1 italic">
-              {project.role}
-            </p>
-            <p className="mt-2 text-text-dim">{project.description}</p>
-            <p className="mt-2 text-sm text-dim font-mono">
-              Tech: {project.tech}
-            </p>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
+              <motion.h3
+                className="text-xl font-semibold text-primary"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {project.title}
+              </motion.h3>
+              <p className="text-sm text-text-muted mt-1 italic">
+                {project.role}
+              </p>
+              <p className="mt-2 text-text-dim">{project.description}</p>
+              <p className="mt-2 text-sm text-dim font-mono">
+                Tech: {project.tech}
+              </p>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+
+      {/* Personal Projects */}
+      <div className="max-w-5xl mx-auto">
+        <h3 className="text-2xl font-semibold text-left text-teal-400 mb-6">
+          Personal & Learning Projects
+        </h3>
+        <VerticalTimeline lineColor="#14b8a6">
+          {personalProjects.map((project, index) => (
+            <VerticalTimelineElement
+              key={index}
+              date={project.date}
+              iconStyle={{ background: "#14b8a6", color: "#fff" }}
+              icon={project.icon}
+              contentStyle={{
+                background: "#0f172a",
+                color: "#e2e8f0",
+                boxShadow: "0 0 0 1px #334155",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
+            >
+              <motion.h3
+                className="text-xl font-semibold text-teal-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                {project.title}
+              </motion.h3>
+              <p className="text-sm text-text-muted mt-1 italic">
+                {project.role}
+              </p>
+              <p className="mt-2 text-text-dim">{project.description}</p>
+              <p className="mt-2 text-sm text-dim font-mono">
+                Tech: {project.tech}
+              </p>
+              {project.links && (
+                <div className="mt-3 space-x-4">
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-400 underline hover:text-blue-300"
+                  >
+                    🔗 Live Demo
+                  </a>
+                  <a
+                    href={project.links.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-400 underline hover:text-blue-300"
+                  >
+                    📁 GitHub Code
+                  </a>
+                </div>
+              )}
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
     </section>
   );
 };

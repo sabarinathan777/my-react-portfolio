@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -17,7 +18,7 @@ const Navbar = () => {
   const activeLink = "text-white font-semibold";
 
   return (
-    <nav className="bg-gradient-to-br from-slate-950 via-black to-gray-900 shadow-md">
+    <nav className="bg-gradient-to-br from-slate-950 via-black to-gray-900 shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-3xl sm:text-4xl font-bold text-white">
           <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">

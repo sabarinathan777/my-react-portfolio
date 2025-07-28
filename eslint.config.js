@@ -23,13 +23,7 @@ export default defineConfig([
       },
     },
     rules: {
-       "no-unused-vars": [
-  "error",
-  {
-    "varsIgnorePattern": "^(motion|Fa[A-Z].*|VerticalTimeline.*)$"
-  }
-]
-
+       "no-unused-vars": [ "error", { "varsIgnorePattern": "^(motion|Fa[A-Z][a-zA-Z]*|VerticalTimeline.*)$" } ]
     },
   },
 ])
