@@ -45,19 +45,19 @@ const personalProjects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-background text-text-base py-16 px-4">
+    <section id="projects" className="bg-[#10101A] text-white py-16 px-4">
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#A586ED]">
           Projects Timeline
         </h2>
-        <p className="text-text-muted mt-2 text-sm sm:text-base">
+        <p className="mt-2 text-sm sm:text-base text-[#B0B0C3]">
           A snapshot of real-world and personal apps I’ve worked on
         </p>
       </div>
 
       {/* Professional Projects */}
       <div className="max-w-5xl mx-auto mb-12">
-        <h3 className="text-2xl font-semibold text-left text-primary mb-6">
+        <h3 className="text-2xl font-semibold text-left text-[#A586ED] mb-6">
           Professional Projects
         </h3>
         <VerticalTimeline lineColor="#6366f1">
@@ -68,25 +68,23 @@ const Projects = () => {
               iconStyle={{ background: "#6366f1", color: "#fff" }}
               icon={project.icon}
               contentStyle={{
-                background: "#1e293b",
-                color: "#e2e8f0",
-                boxShadow: "0 0 0 1px #334155",
+                background: "#1E1E2A",
+                color: "#FFFFFF",
+                boxShadow: "0 0 0 1px #2C2C3A",
               }}
-              contentArrowStyle={{ borderRight: "7px solid #1e293b" }}
+              contentArrowStyle={{ borderRight: "7px solid #1E1E2A" }}
             >
               <motion.h3
-                className="text-xl font-semibold text-primary"
+                className="text-xl font-semibold text-[#A586ED]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
                 {project.title}
               </motion.h3>
-              <p className="text-sm text-text-muted mt-1 italic">
-                {project.role}
-              </p>
-              <p className="mt-2 text-text-dim">{project.description}</p>
-              <p className="mt-2 text-sm text-dim font-mono">
+              <p className="text-sm text-[#B0B0C3] mt-1 italic">{project.role}</p>
+              <p className="mt-2 text-[#D1D1E0]">{project.description}</p>
+              <p className="mt-2 text-sm font-mono text-gray-400">
                 Tech: {project.tech}
               </p>
             </VerticalTimelineElement>
@@ -107,11 +105,11 @@ const Projects = () => {
               iconStyle={{ background: "#14b8a6", color: "#fff" }}
               icon={project.icon}
               contentStyle={{
-                background: "#0f172a",
-                color: "#e2e8f0",
+                background: "#1A1A28",
+                color: "#FFFFFF",
                 boxShadow: "0 0 0 1px #334155",
               }}
-              contentArrowStyle={{ borderRight: "7px solid #0f172a" }}
+              contentArrowStyle={{ borderRight: "7px solid #1A1A28" }}
             >
               <motion.h3
                 className="text-xl font-semibold text-teal-300"
@@ -121,11 +119,9 @@ const Projects = () => {
               >
                 {project.title}
               </motion.h3>
-              <p className="text-sm text-text-muted mt-1 italic">
-                {project.role}
-              </p>
-              <p className="mt-2 text-text-dim">{project.description}</p>
-              <p className="mt-2 text-sm text-dim font-mono">
+              <p className="text-sm text-[#B0B0C3] mt-1 italic">{project.role}</p>
+              <p className="mt-2 text-[#D1D1E0]">{project.description}</p>
+              <p className="mt-2 text-sm font-mono text-gray-400">
                 Tech: {project.tech}
               </p>
               {project.links && (

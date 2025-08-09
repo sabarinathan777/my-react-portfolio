@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import {
   FaHtml5, FaVuejs, FaJs, FaLayerGroup, FaBolt, FaWind,
-  FaCodeBranch, FaReact, FaCode
+  FaCodeBranch, FaReact, FaCode,
+  FaGit
 } from "react-icons/fa";
 
 const useExperienceText = () => {
@@ -31,7 +33,8 @@ const skills = [
   { name: "Tailwind CSS", level: 70, barColor: "bg-teal-400", icon: <FaWind /> },
   { name: "React.js", level: 70, barColor: "bg-cyan-500", icon: <FaReact /> },
   { name: "TFS", level: 60, barColor: "bg-gray-500", icon: <FaCodeBranch /> },
-  { name: "C#", level: 55, barColor: "bg-slate-500", icon: <FaCode /> },
+  { name: "C#", level: 55, barColor: "bg-blue-800", icon: <FaCode /> },
+  { name: "Git", level: 55, barColor: "bg-pink-500", icon: <FaGit/> },
 ];
 
 const About = () => {
@@ -42,19 +45,19 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen px-6 py-16 bg-background text-text-base"
+      className="min-h-screen px-6 py-16 bg-[#10101A] text-gray-200"
     >
       <div className="text-center mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[#A586ED] mb-4">
           Who Am I?
         </h1>
       </div>
 
       <div className="max-w-4xl mx-auto space-y-10">
-        <div className="space-y-4 text-sm sm:text-base text-center sm:text-left text-text-dim">
+        <div className="space-y-4 text-sm sm:text-base text-center sm:text-left text-gray-300">
           <p>
             I’m a frontend developer with{" "}
-            <strong className="text-primary">{experienceText}</strong> of
+            <strong className="text-[#A586ED]">{experienceText}</strong> of
             professional experience. I specialize in building responsive,
             high-performance web interfaces using modern tools like Vue.js,
             React, and Tailwind CSS.
@@ -68,7 +71,7 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-primary font-semibold text-base sm:text-lg mb-3">
+          <h3 className="text-[#A586ED] font-semibold text-base sm:text-lg mb-3">
             Proficient In
           </h3>
           {proficient.map((skill, i) => (
@@ -79,11 +82,11 @@ const About = () => {
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="flex flex-col gap-1 mb-4"
             >
-              <p className="font-medium flex items-center gap-2 text-sm sm:text-base text-text-base">
+              <p className="font-medium flex items-center gap-2 text-sm sm:text-base text-gray-200">
                 <span className="text-xl">{skill.icon}</span>
                 {skill.name}
               </p>
-              <div className="w-full bg-bar-base rounded-full h-2">
+              <div className="w-full bg-gray-700 rounded-full h-2">
                 <div
                   className={`${skill.barColor} h-2 rounded-full transition-all duration-500`}
                   style={{ width: `${skill.level}%` }}
@@ -92,7 +95,7 @@ const About = () => {
             </motion.div>
           ))}
 
-          <h3 className="text-primary font-semibold text-base sm:text-lg mt-6 mb-3">
+          <h3 className="text-[#A586ED] font-semibold text-base sm:text-lg mt-6 mb-3">
             Familiar With
           </h3>
           {familiar.map((skill, i) => (
@@ -103,11 +106,11 @@ const About = () => {
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="flex flex-col gap-1 mb-4"
             >
-              <p className="font-medium flex items-center gap-2 text-sm sm:text-base text-text-base">
+              <p className="font-medium flex items-center gap-2 text-sm sm:text-base text-gray-200">
                 <span className="text-xl">{skill.icon}</span>
                 {skill.name}
               </p>
-              <div className="w-full bg-bar-base rounded-full h-2">
+              <div className="w-full bg-gray-700 rounded-full h-2">
                 <div
                   className={`${skill.barColor} h-2 rounded-full transition-all duration-500`}
                   style={{ width: `${skill.level}%` }}

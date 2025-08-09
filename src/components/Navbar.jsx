@@ -14,11 +14,11 @@ const Navbar = () => {
   ];
 
   const baseLink =
-    "block text-slate-300 hover:text-indigo-400 transition font-medium";
-  const activeLink = "text-white font-semibold";
+    "block text-white hover:text-[#A586ED] transition font-medium";
+  const activeLink = "text-[#A586ED] font-semibold";
 
   return (
-    <nav className="bg-gradient-to-br from-slate-950 via-black to-gray-900 shadow-md sticky top-0 z-50">
+    <nav className="bg-[#10101A] shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-3xl sm:text-4xl font-bold text-white">
           <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-gradient-to-br from-slate-950 via-black to-gray-900">
+        <div className="md:hidden px-4 pb-4 space-y-2 bg-[#10101A]">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}

@@ -18,31 +18,37 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-background text-text-base flex items-center justify-center px-6">
+    <section
+      style={{ backgroundColor: "#10101A", color: "#FFFFFF" }}
+      className="min-h-screen flex items-center justify-center px-6"
+    >
       <motion.div
         className="max-w-3xl w-full text-center space-y-6"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
       >
-        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-          <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-            Hi, I'm Sabari Nathan
-          </span>
+        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+          <span style={{ color: "#E0E0E0" }}>Hi, I'm </span>
+          <span style={{ color: "#A586ED" }}>Sabari Nathan</span>
         </h1>
 
-        <h2 className="text-xl sm:text-2xl font-light text-primary">
+        <h2 className="text-xl sm:text-2xl font-light" style={{ color: "#A586ED" }}>
           <span ref={typedEl} />
         </h2>
 
-        <p className="text-text-dim text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+        <p className="sm:text-lg leading-relaxed max-w-xl mx-auto text-gray-300">
           I build fast, responsive, and accessible web interfaces using Vue, React, and modern tools. My focus is clean code and clean design.
         </p>
 
-        <p className="text-text-muted text-base sm:text-lg mt-4 max-w-2xl mx-auto">
+        <p className="sm:text-lg mt-4 max-w-2xl mx-auto text-gray-300">
           I'm a frontend developer focused on crafting responsive and interactive web experiences.
           Currently expanding my skills in React & Tailwind — learn more in the{" "}
-          <a href="#about" className="text-primary underline hover:text-primary-hover transition">
+          <a
+            href="#about"
+            style={{ color: "#A586ED" }}
+            className="underline hover:text-violet-300 transition"
+          >
             About section
           </a>.
         </p>
@@ -52,7 +58,15 @@ const Hero = () => {
           download="Sabari_Nathan_CV.pdf"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="btn-primary mt-4"
+          style={{
+            backgroundColor: "#A586ED",
+            color: "#FFFFFF",
+            padding: "0.75rem 1.5rem",
+            borderRadius: "0.5rem",
+            fontWeight: "600",
+            display: "inline-block",
+          }}
+          className="shadow-md hover:bg-white transition mt-4"
         >
           📄 Download Resume
         </motion.a>

@@ -6,7 +6,8 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css"
 
 
@@ -14,7 +15,7 @@ import "./index.css"
 function App() {
   return (
     <div className="min-h-screen">
-     <Toaster />
+     <ToastContainer />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
