@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Social */}
           <div className="flex gap-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/sabarinathan777"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#A586ED] transition"
@@ -38,7 +38,7 @@ const Footer = () => {
               <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/sabari-nathan-31488b250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#A586ED] transition"
@@ -53,7 +53,6 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
         whileHover={{ scale: 1.1 }}

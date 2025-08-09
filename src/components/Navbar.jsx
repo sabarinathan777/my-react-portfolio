@@ -29,7 +29,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 sm:text-xl">
           {navLinks.map((link) => (
             <NavLink
@@ -44,33 +43,44 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle Button */}
         <button
           className="md:hidden text-white"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle Menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-[#10101A]">
-          {navLinks.map((link) => (
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-[#10101A]/90 backdrop-blur-xl transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } md:hidden z-40`}
+      >
+        <div className="flex justify-between items-center px-4 py-4">
+          <span className="text-2xl font-bold text-white">Menu</span>
+          <button onClick={() => setIsOpen(false)}>
+            <X size={28} className="text-white" />
+          </button>
+        </div>
+        <div className="mt-6 space-y-6 px-6">
+          {navLinks.map((link, index) => (
             <NavLink
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `${baseLink} ${isActive ? activeLink : ""}`
+                `block text-lg tracking-wide transition-transform duration-300 hover:translate-x-2 ${
+                  isActive ? activeLink : baseLink
+                }`
               }
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
               {link.label}
             </NavLink>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };

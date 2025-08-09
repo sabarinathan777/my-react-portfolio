@@ -41,6 +41,19 @@ const personalProjects = [
       code: "https://github.com/sabarinathan777/youtube-clone",
     },
   },
+   {
+    title: "Smart Study Scheduler (React)",
+    date: "Aug 2025",
+    icon: <FaLaptopCode />,
+    description:
+  "Built a responsive study scheduling app with React and Tailwind CSS. Implemented CRUD operations using local storage with useReducer, replaced single-task deletion with multi-delete for efficiency, added advanced filtering, and integrated dark/light mode for an improved user experience.",
+    tech: "React, Vite, Tailwind CSS, GitHub, Vercel",
+    role: "Personal Project",
+    links: {
+      live: "https://smart-study-scheduler-nine.vercel.app",
+      code: "https://github.com/sabarinathan777/smart-study-scheduler",
+    },
+  },
 ];
 
 const Projects = () => {
@@ -55,7 +68,6 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Professional Projects */}
       <div className="max-w-5xl mx-auto mb-12">
         <h3 className="text-2xl font-semibold text-left text-[#A586ED] mb-6">
           Professional Projects
@@ -92,7 +104,6 @@ const Projects = () => {
         </VerticalTimeline>
       </div>
 
-      {/* Personal Projects */}
       <div className="max-w-5xl mx-auto">
         <h3 className="text-2xl font-semibold text-left text-teal-400 mb-6">
           Personal & Learning Projects
