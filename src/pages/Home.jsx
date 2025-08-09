@@ -20,6 +20,22 @@ const Hero = () => {
     return () => typed.destroy();
   }, []);
 
+  const downloadFile = () => {
+  fetch('/document/cv.pdf')
+    .then(res => res.blob())
+    .then(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Sabari_Nathan_FrontEnd.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    });
+};
+
+
   return (
     <section className="bg-[#10101A] text-white min-h-screen flex items-center justify-center px-6">
       <motion.div
@@ -53,15 +69,15 @@ const Hero = () => {
   </Link>.
         </p>
 
-        <motion.a
-          href="/document/cv.pdf"
-          download="Sabari_Nathan_FrontEnd.pdf"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <motion.button
+  onClick={downloadFile}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
           className="inline-block bg-[#A586ED] text-white px-6 py-3 rounded-md font-semibold shadow-md bg:text-[#8677aa] hover:text-white transition mt-4"
-        >
-          📄 Download Resume
-        </motion.a>
+>
+  📄 Download Resume
+</motion.button>
+
       </motion.div>
     </section>
   );
