@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global background: gradient mesh + noise ── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #10101A;
+  color: #e5e5f0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 15% 10%, rgba(165, 134, 237, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+}
+
+/* Subtle noise texture overlay */
+body::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Ensure page content is above pseudo-elements */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scroll bar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #10101A;
+}
+::-webkit-scrollbar-thumb {
+  background: #A586ED55;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A586ED;
+}
+
+/* ── Skill bar animation ── */
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: var(--bar-width); }
+}
+.skill-bar-fill {
+  animation: fillBar 1s ease forwards;
+  width: var(--bar-width);
+}
+
+/* ── Glass card base ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
